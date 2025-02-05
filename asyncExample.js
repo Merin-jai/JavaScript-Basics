@@ -61,3 +61,17 @@ getPosts();
 
 
 // ---------------------------------------5-------------------------------------------
+// Using async/await with loops
+// We can use async/await with loops to perform asynchronous operations in a loop.
+// This is useful when we need to perform the same operation multiple times.
+async function getPosts() {
+    for (let i = 1; i <= 10; i++) {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${i}`);
+        const data = await response.json();
+        console.log(data);
+    }
+    }
+getPosts();
+        // Here, we use a for loop to fetch the data for posts 1 to 10.
+        // We use async/await to wait for each fetch operation to complete before moving on to the next one 
+
