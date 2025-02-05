@@ -74,4 +74,3 @@ async function getPosts() {
 getPosts();
         // Here, we use a for loop to fetch the data for posts 1 to 10.
         // We use async/await to wait for each fetch operation to complete before moving on to the next one 
-
