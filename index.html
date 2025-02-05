@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Script-Basics</title>
-    <script src="asyncExample.js"></script>
+    <!-- <script src="asyncExample.js"></script> -->
+    <script src="JsEvents.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -12,16 +13,16 @@
         <div class="main">
             <h1 onclick="this.innerHTML='Please Log in'">LOGIN</h1>
         </div>
-        <form class="form">
+        <form class="form" onsubmit="main(event)">
             <div class="elements">
-                <label>Username</label>
+                <label>Username*</label>
                 <input type="email" id="username" placeholder="Enter Username">
-                <span id="userError"></span>
+                <span class="userError"></span>
             </div>
             <div class="elements">
-                <label>Password</label>
+                <label>Password*</label>
                 <input type="text" id="password" placeholder="Enter password">
-                <span id="passError"></span>
+                <span class="passError"></span>
             </div>
             <input type="submit">
         </form>

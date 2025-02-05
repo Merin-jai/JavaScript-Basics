@@ -25,7 +25,7 @@
 .elements{
     display: flex;
     flex-direction: column;
-    font-size:  calc(0.8rem+1vw);
+    font-size:  clamp(1rem, 1.5vw, 4rem);
     /* background-color: rgb(255, 255, 255); */
     margin-bottom: 1%;
 }
@@ -35,6 +35,13 @@
     padding: 9%;
     border-radius: 12px;
     width: 100%;
+    font-size:medium;
+}
+span{
+    margin-top: 1%;
+    color: red;
+    font-style: italic;
+    font-size: smaller;
 }
 
 input[type="submit"]{
