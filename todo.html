@@ -56,8 +56,8 @@
             let li = button.parentElement.parentElement;
             let taskText = li.querySelector(".task-text");
             if (li.classList.contains("completed")) {
-                taskText.innerText = taskText.dataset.originalText; // Restore original text
-                button.innerText = "✔"; // Change button back to checkmark
+                taskText.innerText = taskText.dataset.originalText;
+                button.innerText = "✔";
             } else {
                 taskText.dataset.originalText = taskText.innerText; 
                 // const text = taskText.value();

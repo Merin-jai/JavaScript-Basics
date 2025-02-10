@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <button onclick="showSection('login')">Login</button>
+        <button onclick="showSection('todo')">To-Do List</button>
+        <button onclick="showSection('weather')">Weather App</button>
+    </nav>
+    
+    <section id="login" class="section">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form onsubmit="main(event)">
+                <label>Email*</label>
+                <input type="email" id="username" placeholder="Enter Email">
+                <span class="userError"></span>
+                <label>Password*</label>
+                <input type="password" id="password" placeholder="Enter Password">
+                <span class="passError"></span>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="todo" class="section hidden">
+        <h1>To-Do List</h1>
+        <input type="text" id="search" placeholder="Search Tasks..." onkeyup="filterItems()">
+        <input type="text" id="task" placeholder="New Task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="task-list"></ul>
+    </section>
+
+    <section id="weather" class="section hidden">
+        <h1>Weather App</h1>
+        <input type="text" id="city" placeholder="Enter City">
+        <button onclick="fetchWeather()">Get Weather</button>
+        <p id="weather-result"></p>
+    </section>
+</body>
+</html>

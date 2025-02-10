@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +12,25 @@
 </head>
 <body>
     <div class="login">
+        <nav>
+            <button onclick="location.href='index.html'">Login</button>
+            <button onclick="location.href='todo.html'">To-Do List</button>
+            <button onclick="location.href='weather.html'">Weather App</button>
+        </nav>
         <div class="main">
             <h1 onclick="this.innerHTML='Please Log in'">LOGIN</h1>
         </div>
         <form class="form" onsubmit="main(event)">
             <div class="elements">
                 <label>Username*</label>
-                <input type="email" id="username" placeholder="Enter Username">
-                <span class="userError"></span>
+                <input type="email" id="username" placeholder="Enter Username" onfocus="this.styl">
             </div>
+            <span class="userError"></span>
             <div class="elements">
                 <label>Password*</label>
                 <input type="text" id="password" placeholder="Enter password">
-                <span class="passError"></span>
             </div>
+            <span class="passError"></span>
             <input type="submit">
         </form>
     </div>
