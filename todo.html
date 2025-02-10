@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <nav>
+        <button onclick="location.href='index.html'">Login</button>
+        <button onclick="location.href='todo.html'">To-Do List</button>
+        <button onclick="location.href='weather.html'">Weather App</button>
+    </nav>
+    <div class="container">
+        <h2>To-Do List</h2>
+
+        <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="filterTasks()">
+        
+
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+ 
+        <ul id="taskList"></ul>
+    </div>
+    
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+        
+            let taskList = document.getElementById("taskList");
+        
+            let li = document.createElement("li");
+            li.innerHTML = `
+                <span class="task-text">${taskText}</span>
+                <div>
+                    <button onclick="completeTask(this)">✔</button>
+                    <button onclick="removeTask(this)">X</button>
+                </div>
+            `;
+            
+            taskList.appendChild(li);
+            taskInput.value = "";
+        }
+
+        function completeTask(button) {
+            let li = button.parentElement.parentElement;
+            let taskText = li.querySelector(".task-text");
+            if (li.classList.contains("completed")) {
+                taskText.innerText = taskText.dataset.originalText; // Restore original text
+                button.innerText = "✔"; // Change button back to checkmark
+            } else {
+                taskText.dataset.originalText = taskText.innerText; 
+                // const text = taskText.value();
+                // taskText.innerText = text+ " Completed"; 
+                button.innerText = "↩"; 
+            }
+        
+            li.classList.toggle("completed");
+        }
+
+        function removeTask(button) {
+            let li = button.parentElement.parentElement;
+            li.remove();
+        }
+
+        function filterTasks() {
+            let searchInput = document.getElementById("searchInput").value.toLowerCase();
+            let tasks = document.querySelectorAll("#taskList li");
+        
+            tasks.forEach(task => {
+                let taskText = task.querySelector(".task-text").innerText.toLowerCase();
+                if (taskText.includes(searchInput)) {
+                    task.style.display = "flex";
+                } else {
+                    task.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
