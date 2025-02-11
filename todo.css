@@ -64,4 +64,10 @@ li {
     /* text-decoration: line-through; */
     background-color: #8cc99b;
     color: rgb(225, 233, 223);
+    white-space: wrap;
+}
+
+.list{
+    display: flex;
+    white-space: wrap;
 }
