@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array JS</title>
+</head>
+<body>
+    <script>
+        // Definir un array
+        let fruits = ["apple","orange","banana"];
+        console.log(fruits);
+        console.log(fruits[0]);
+        
+        let num = fruits.length;
+        console.log(num);
+        fruits.push("this is a fruit");
+        console.log(fruits);
+
+        for (let i=0; i< fruits.length;i++){
+            console.log(fruits[i]);
+        }
+        fruits.sort().reverse();
+        console.log(fruits);
+
+        const matrix = [[1,2,3],
+                        [4,5,6],
+                        [7,8,9]];
+
+        for(let row of matrix)
+        {
+            const rowString=row.join(' ');
+            console.log(rowString);
+        }
+    </script>
+</body>
+</html>
